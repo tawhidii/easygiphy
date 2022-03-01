@@ -2,3 +2,6 @@
 __pycache__/
 Pipfile
 .vscode/*
+build/
+dist/
+easygiphy.egg-info/

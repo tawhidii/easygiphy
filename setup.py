@@ -13,7 +13,7 @@ LONG_DESCRIPTION = 'A package wrapper for the giphy public API that allows you t
 
 # Setting up
 setup(
-    name="easygiphy",
+    name="ezgiphy",
     version=VERSION,
     author="barii.py (K.Khademul Bari)",
     author_email="<barii.py@gmail.com>",

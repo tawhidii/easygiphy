@@ -1,7 +1,7 @@
 import json
 from urllib import parse, request
-from errors import APIKeyError, RequiredError
-from constants import PUBLIC_API_URL
+from .errors import APIKeyError, RequiredError
+from .constants import PUBLIC_API_URL
 
 
 class APIBase:
