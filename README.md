@@ -1,13 +1,13 @@
-# easygiphy 0.0.1
+# ezgiphy 0.0.3
 
-####A wrapper for the Giphy public API.
+#### A wrapper for the Giphy public API.
 A package wrapper for the Giphy public API that allows you to work with all Giphy API endpoints.
 
 
 
 Installing using pip
 ```
-pip install easygiphy
+pip install ezgiphy
 ```
 
 ### Examples

@@ -4,4 +4,4 @@ Pipfile
 .vscode/*
 build/
 dist/
-easygiphy.egg-info/
+ezgiphy.egg-info/
