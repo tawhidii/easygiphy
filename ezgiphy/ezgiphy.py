@@ -195,7 +195,41 @@ class GiphyStickerAPI(APIBase):
         url = "".join((STICKER_API_URL, '?', params, f"{'&ids='}", "%2C".join(ids)))
         return self.__get_json(url)
 
+    def stickers_listing(self):
+        """Get all the stickers pack"""
+        params = parse.urlencode(self.params)
+        url = "".join((STICKER_API_URL, '/packs', '?', params))
+        return self.__get_json(url)
 
-test = GiphyStickerAPI(api_key='uSuEHJwr1wWxxNo46TjdTh9ROTl5Fcjt')
-res = test.random(tag='ukraine')
+    def individual_stickers_pack(self, id=None):
+        """
+        :param id: get individual sticker pack by id
+        """
+        if id is None:
+            raise RequiredError('id')
+        params = parse.urlencode(self.params)
+        url = "".join((STICKER_API_URL, f'/packs/{id}', '?', params))
+        return self.__get_json(url)
+
+    def stickers(self, id=None,**kwargs):
+        """
+        :param id: id of sticker pack.
+        :param limit:The maximum number of records to return.
+        :param offset:An optional results offset.
+
+        """
+
+        if id is None:
+            raise RequiredError('id')
+        if kwargs:
+            self.params.update(kwargs)
+        params = parse.urlencode(self.params)
+        url = "".join((STICKER_API_URL,f'/packs/{id}/stickers','?',params))
+        return self.__get_json(url)
+
+
+g = GiphyStickerAPI(api_key='uSuEHJwr1wWxxNo46TjdTh9ROTl5Fcjt')
+res = g.stickers(id=3138,limit=26, offset=0)
 print(res)
+
+
