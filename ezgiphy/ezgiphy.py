@@ -1,7 +1,7 @@
 import json
 from urllib import parse, request
-from errors import APIKeyError, RequiredError
-from constants import PUBLIC_API_URL, STICKER_API_URL
+from .errors import APIKeyError, RequiredError
+from .constants import PUBLIC_API_URL, STICKER_API_URL
 
 
 class APIBase:
@@ -234,10 +234,7 @@ class GiphyStickerAPI(APIBase):
         if id is None:
             raise RequiredError('id')
         params = parse.urlencode(self.params)
-        url = "".join((STICKER_API_URL, f'/stickers/packs/{id}/children?', params))
+        url = "".join((STICKER_API_URL, f'/packs/{id}/children?', params))
         return self.__get_json(url)
 
 
-g = GiphyStickerAPI(api_key='uSuEHJwr1wWxxNo46TjdTh9ROTl5Fcjt')
-res = g.children_pack_listing(3138)
-print(res)
